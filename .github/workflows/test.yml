@@ -3,6 +3,9 @@ name: test
 on:
   workflow_dispatch:
 
+env:
+  GITHUB_REF_NAME: develop
+
 jobs:
   test:
     runs-on: ubuntu-latest
