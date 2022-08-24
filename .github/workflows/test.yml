@@ -1,13 +1,20 @@
 name: test
 
-on: pull_request
+on:
+  workflow_dispatch:
+
+env:
+  GITHUB_REF_NAME: develop
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: develop
       - name: Logging Test
         run: echo $GITHUB_REF_NAME
       env:
         GITHUB_REF_NAME: develop
+
