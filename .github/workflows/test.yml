@@ -3,18 +3,16 @@ name: test
 on:
   workflow_dispatch:
 
-env:
-  GITHUB_REF_NAME: develop
-
 jobs:
   test:
     runs-on: ubuntu-latest
+      env:
+        GITHUB_REF_NAME: develop
     steps:
       - uses: actions/checkout@v2
         with:
           ref: develop
       - name: Logging Test
         run: echo $GITHUB_REF_NAME
-      env:
-        GITHUB_REF_NAME: develop
+
 
