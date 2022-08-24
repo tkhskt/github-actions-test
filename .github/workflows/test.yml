@@ -8,4 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Logging Test
-        run: which ls
+        run: echo $GITHUB_REF_NAME
+      env:
+        GITHUB_REF_NAME: develop
