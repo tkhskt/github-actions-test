@@ -6,13 +6,11 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-      env:
-        GITHUB_REF_NAME: develop
+    env:
+      GITHUB_REF_NAME: develop
     steps:
       - uses: actions/checkout@v2
         with:
           ref: develop
       - name: Logging Test
         run: echo $GITHUB_REF_NAME
-
-
